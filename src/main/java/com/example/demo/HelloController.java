@@ -3,6 +3,8 @@ package com.example.demo;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,22 +13,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
-	
-    @Value("${git.commit.message.short}")
-    private String commitMessage;
-
-    @Value("${git.branch}")
-    private String branch;
 
     @Value("${git.commit.id}")
     private String commitId;
+    
+    Logger logger = LoggerFactory.getLogger(HelloController.class);
 
-    @RequestMapping("/commitId")
+    @RequestMapping("/versionz")
     public Map<String, String> getCommitId() {
         Map<String, String> result = new HashMap<>();
-        result.put("Commit message",commitMessage);
-        result.put("Commit branch", branch);
         result.put("Commit id", commitId);
+        result.put("project-name", "endocode-app");
         return result;
     }
 
@@ -41,13 +38,9 @@ public class HelloController {
 			return str;
 		}
 		
+		//logger.info("An INFO Message");
+		
 		return "Hello Stranger";
 	}
 	
-	@RequestMapping(path = "/versionz", method= RequestMethod.GET)
-	public String version() {
-		
-		return null;
-	}
-
 }
