@@ -1,7 +1,6 @@
 pipeline {
     
-    agent { 
-        sh "sudo chown jenkins: -R \$PWD/"
+    agent {
 
         docker { 
             image 'maven:3.3.3' 
