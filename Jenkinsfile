@@ -4,7 +4,7 @@ pipeline {
 
         docker { 
             image 'maven:3.3.3' 
-            args '--tmpfs /.config'
+            registryCredentialsId 'dockerid'
         } 
     }
 
