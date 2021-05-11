@@ -9,7 +9,7 @@ pipeline {
     agent any
 
     stages {
-
+/*
         stage('building docker image') {
           steps{
             script {
@@ -25,6 +25,15 @@ pipeline {
                         dockerImage.push("$BUILD_NUMBER")
                         dockerImage.push('latest')
                     }
+                }
+            }
+        }
+*/
+        stage() {
+            steps {
+                script {
+                    sh 'kubectl apply -f k8s-deployment.yaml'
+                    sh 'kubectl rollout restart deployment endocode-app'
                 }
             }
         }
