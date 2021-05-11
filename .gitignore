@@ -35,3 +35,7 @@ build/
 
 .mvn
 logs
+
+### terraform ###
+.terraform*
+terraform.tfstate*

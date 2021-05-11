@@ -29,7 +29,8 @@ pipeline {
             }
         }
 
-        stage('deploy to kubernetes') {
+/*
+        stage('deploy to kubernetes with kubectl') {
             steps {
                 script {
                     sh 'kubectl apply -f k8s-deployment.yaml --kubeconfig /root/kubeconfig'
@@ -37,6 +38,17 @@ pipeline {
                 }
             }
         }
+*/
+
+        stage('deploy to kubernetes using terraform') {
+            steps {
+                script {
+                    sh 'terraform init'
+                    sh 'terraform apply'
+                }
+            }
+        }
+
 
     }
 }
