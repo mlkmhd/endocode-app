@@ -3,7 +3,7 @@ pipeline {
     agent {
 
         docker { 
-            image 'maven:3.3.3' 
+            image 'maven:3.8.1-jdk-11' 
             registryCredentialsId 'dockerid'
         } 
     }
