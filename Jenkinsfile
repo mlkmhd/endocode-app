@@ -9,7 +9,7 @@ pipeline {
     agent any
 
     stages {
-/*
+
         stage('building docker image') {
           steps{
             script {
@@ -28,7 +28,7 @@ pipeline {
                 }
             }
         }
-*/
+
         stage('deploy to kubernetes') {
             steps {
                 script {
