@@ -21,10 +21,10 @@ pipeline {
             }
         }
 
-        stage('Building docker image') {
+        stage('building docker image') {
           steps{
             script {
-              docker.build endocode-app
+              docker.build "endocode-app"
             }
           }
         }
