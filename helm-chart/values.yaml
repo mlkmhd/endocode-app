@@ -1,0 +1,3 @@
+endocode:
+  image: mlkbenjamin/endocode-app
+  terminationGracePeriodSeconds: 30

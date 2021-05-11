@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+  endocode-app:
+    image: mlkbenjamin/endocode-app
+    ports:
+      - 8081:8080
