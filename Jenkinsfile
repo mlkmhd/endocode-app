@@ -14,5 +14,11 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+
+        state('test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
     }
 }
