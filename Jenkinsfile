@@ -29,11 +29,11 @@ pipeline {
             }
         }
 */
-        stage() {
+        stage('deploy to kubernetes') {
             steps {
                 script {
-                    sh 'kubectl apply -f k8s-deployment.yaml'
-                    sh 'kubectl rollout restart deployment endocode-app'
+                    sh 'kubectl apply -f k8s-deployment.yaml --kubeconfig /root/kubeconfig'
+                    sh 'kubectl rollout restart deployment endocode-app --kubeconfig /root/kubeconfig'
                 }
             }
         }
