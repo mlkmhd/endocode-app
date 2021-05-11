@@ -1,7 +1,6 @@
 pipeline {
     
     agent {
-
         docker { 
             image 'maven:3.8.1-jdk-11' 
             registryCredentialsId 'dockerid'
@@ -19,6 +18,14 @@ pipeline {
             steps {
                 sh 'mvn test'
             }
+        }
+
+        stage('Building docker image') {
+          steps{
+            script {
+              docker.build endocode-app
+            }
+          }
         }
     }
 }
