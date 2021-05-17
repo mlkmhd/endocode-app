@@ -39,7 +39,7 @@ you can use a predefiend jenkins pipeline file. the `Jenkinsfile` will automcati
 
 ## Shipping logs to ELK
 
-first you need to deploy the filebeat to kubernetes. it will automatically collect all logs from all containers and will ship them into the kubernetes. you need to change the `filebeat-kubernetes.yaml` file and set `ELASTICSEARCH_HOST` and `ELASTICSEARCH_PORT` with your desiered values.
+first you need to deploy the filebeat to kubernetes. it will automatically collect all logs from all containers and will ship them into the ELK. you need to change the `filebeat-kubernetes.yaml` file and set `ELASTICSEARCH_HOST` and `ELASTICSEARCH_PORT` with your desiered values.
 the you can deploy it into the kubernetes by the following command:
 
 ```bash
